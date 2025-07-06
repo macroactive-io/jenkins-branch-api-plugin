@@ -34,7 +34,7 @@
   </parent>
 
   <artifactId>branch-api</artifactId>
-  <version>${revision}.${changelist}</version>
+  <version>${revision}.1280.1-im</version>
   <packaging>hpi</packaging>
 
   <name>Branch API Plugin</name>
