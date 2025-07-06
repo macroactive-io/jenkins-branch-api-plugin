@@ -4,7 +4,7 @@ def mvnOpts = '-DskipTests -ntp -Darguments="-DskipTests -ntp"'
 // for cache see kubernetes-plugin.git/examples/maven-with-cache.groovy
 
 podTemplate(label: label, containers: [
-  containerTemplate(name: 'maven', image: 'maven:3.6.1-jdk-8-alpine', ttyEnabled: true, command: 'cat')
+  containerTemplate(name: 'maven', image: 'maven:3.9.10-eclipse-temurin-11-alpine', ttyEnabled: true, command: 'cat')
   ], volumes: [
   emptyDirVolume(mountPath: '/root/.m2/repository')
   ]) {
