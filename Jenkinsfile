@@ -24,7 +24,7 @@ podTemplate(label: label, containers: [
       }
 
       // https://www.jenkins.io/doc/pipeline/steps/core/#code-archiveartifacts-code-archive-the-artifacts
-      archiveArtifacts artifacts: 'target/multi-branch-priority-sorter.hpi',
+      archiveArtifacts artifacts: 'target/branch-api.hpi',
         fingerprint: true, onlyIfSuccessful: true
     }
   }
