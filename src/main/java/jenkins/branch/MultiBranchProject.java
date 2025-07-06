@@ -2350,11 +2350,11 @@ public abstract class MultiBranchProject<P extends Job<P, R> & TopLevelItem,
                 return !(head instanceof TagSCMHead);
             } else {
                 for (BranchBuildStrategy s : buildStrategies) {
-                    if (s.automaticBuild(source, head, currRevision, lastBuiltRevision, lastSeenRevision, listener)) {
-                        return true;
+                    if (!s.automaticBuild(source, head, currRevision, lastBuiltRevision, lastSeenRevision, listener)) {
+                        return false;
                     }
                 }
-                return false;
+                return true;
             }
         }
     }
