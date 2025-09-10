@@ -1,3 +1,11 @@
+properties([
+  pipelineTriggers([githubPush()]),
+  disableConcurrentBuilds(abortPrevious: true),
+  buildDiscarder(
+    logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '',
+      daysToKeepStr: '', numToKeepStr: '20')),
+])
+
 String label = "maven-${UUID.randomUUID().toString()}" // TODO use POD_LABEL when available
 String mvnOpts = '-DskipTests -ntp -Darguments="-DskipTests -ntp"'
 
